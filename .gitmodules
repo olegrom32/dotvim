@@ -16,9 +16,6 @@
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
-[submodule "vdebug"]
-	path = vdebug
-	url = https://github.com/joonty/vdebug
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
 	url = https://github.com/bling/vim-airline
