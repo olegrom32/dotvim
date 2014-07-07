@@ -37,3 +37,6 @@
 [submodule "bundle/vim-bufferline"]
 	path = bundle/vim-bufferline
 	url = https://github.com/bling/vim-bufferline
+[submodule "bundle/php.vim"]
+	path = bundle/php.vim
+	url = https://github.com/joshtronic/php.vim
