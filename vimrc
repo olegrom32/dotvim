@@ -7,6 +7,7 @@ set history=500
 
 au FileType php match ErrorMsg '\%>120v.\+'
 au BufNewFile,BufReadPost *.tpl set filetype=html
+set cursorline
 
 "------  Visual Options  ------
 syntax on                   "Enables syntax highlighting
