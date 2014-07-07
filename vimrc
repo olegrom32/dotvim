@@ -80,6 +80,7 @@ nnoremap <Leader>gp :Ggrep
 nnoremap <Leader>gR :Gread<CR>
 nnoremap <Leader>gg :Git 
 nnoremap <Leader>gd :Gdiff<CR>
+autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " PDV
 let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
