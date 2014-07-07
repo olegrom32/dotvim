@@ -6,6 +6,7 @@ set viminfo='100,\"1000,:20,%,n~/.viminfo
 set history=500
 
 au FileType php match ErrorMsg '\%>120v.\+'
+au BufNewFile,BufReadPost *.tpl set filetype=html
 
 "------  Visual Options  ------
 syntax on                   "Enables syntax highlighting
