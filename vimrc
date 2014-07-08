@@ -102,3 +102,13 @@ let g:solarized_contrast="high"
 "let g:solarized_visibility="high"
 colorscheme solarized
 
+" Set title
+autocmd BufEnter * let &titlestring = expand("%:t")
+let &titleold = hostname() . ':' . getcwd()
+if &term == "screen"
+    set t_ts=^[k
+    set t_fs=^[\
+endif
+if &term == "screen" || &term == "xterm"
+    set title
+endif

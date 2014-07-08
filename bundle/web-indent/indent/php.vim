@@ -35,14 +35,3 @@ function! GetPhpHtmlIndent(lnum)
 endfunction
 setlocal indentexpr=GetPhpHtmlIndent(v:lnum)
 setlocal indentkeys+=<>>
-
-" Set comments format options
-setlocal comments=s1:/*,mb:*,ex:*/,://,:#
-
-setlocal formatoptions-=t
-setlocal formatoptions+=q
-setlocal formatoptions+=r
-setlocal formatoptions+=o
-setlocal formatoptions+=w
-setlocal formatoptions+=c
-setlocal formatoptions+=b
