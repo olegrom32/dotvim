@@ -83,8 +83,7 @@ nnoremap <Leader>gd :Gdiff<CR>
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " PDV
-let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
-"nnoremap <buffer> <C-b> :call pdv#DocumentWithSnip()<CR>
+let g:pdv_template_dir = $HOME ."/.vim/UltiSnips"
 map <Leader>a :call pdv#DocumentWithSnip()<CR>
 
 " Taglist
