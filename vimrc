@@ -5,8 +5,6 @@ set nocompatible            "Prefents VIM from being nerfed into acting like VI
 set viminfo='100,\"1000,:20,%,n~/.viminfo
 set history=500
 
-au FileType php match ErrorMsg '\%>120v.\+'
-au BufNewFile,BufReadPost *.tpl set filetype=html
 set cursorline
 
 "------  Visual Options  ------
@@ -24,6 +22,12 @@ set autoindent              "Autoindent
 set expandtab               "Use spaces instead of tabs
 set noswapfile
 set nobackup
+
+" Filetype specific config
+au FileType php match ErrorMsg '\%>120v.\+'
+au BufNewFile,BufReadPost *.tpl set filetype=html
+
+au FileType ruby set tabstop=2 shiftwidth=2 softtabstop=2
 
 " ,T = Delete all Trailing space in file
 map <Leader>T :%s/\s\+$//<CR>
@@ -85,6 +89,9 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 " PDV
 let g:pdv_template_dir = $HOME ."/.vim/UltiSnips"
 map <Leader>a :call pdv#DocumentWithSnip()<CR>
+
+" Syntastic
+let g:syntastic_php_phpcs_args="--standard=PSR2"
 
 " Taglist
 map <Leader>t :TlistToggle<CR>
