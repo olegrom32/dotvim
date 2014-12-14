@@ -25,8 +25,8 @@ set nobackup
 
 " Filetype specific config
 au FileType php match ErrorMsg '\%>120v.\+'
+au FileType ruby match ErrorMsg '\%>80v.\+'
 au BufNewFile,BufReadPost *.tpl set filetype=html
-
 au FileType ruby,yaml set tabstop=2 shiftwidth=2 softtabstop=2
 
 " ,T = Delete all Trailing space in file
