@@ -107,6 +107,11 @@ let g:syntastic_php_phpcs_args="--standard=PSR2"
 " Taglist
 map <Leader>t :TlistToggle<CR>
 
+" UltiSnips
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
 " Vdebug
 let g:vdebug_options={}
 let g:vdebug_options['port']=9001
@@ -114,10 +119,35 @@ let g:vdebug_options['break_on_open']=0
 
 " Getter/setter
 map <Leader>s <Plug>PhpgetsetInsertGetterSetter
-let g:nerdtree_tabs_autoclose=0
+
+let b:phpgetset_getterTemplate =
+    \ "\n" .
+    \ "    /**\n" .
+    \ "     * Get %varname%.\n" .
+    \ "     *\n" .
+    \ "     * @return mixed $%varname%\n" .
+    \ "     */\n" .
+    \ "    public function %funcname%()\n" .
+    \ "    {\n" .
+    \ "        return $this->%varname%;\n" .
+    \ "    }"
+let b:phpgetset_setterTemplate =
+    \ "\n" .
+    \ "    /**\n" .
+    \ "     * Set %varname%.\n" .
+    \ "     *\n" .
+    \ "     * @param mixed $%varname%\n" .
+    \ "     */\n" .
+    \ "    public function %funcname%($%varname%)\n" .
+    \ "    {\n" .
+    \ "        $this->%varname% = $%varname%;\n" .
+    \ "    }"
 
 " YCM
 let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " Colors
 set t_Co=256
