@@ -25,9 +25,10 @@ set nobackup
 
 " Filetype specific config
 au FileType php match ErrorMsg '\%>120v.\+'
+au FileType php set omnifunc=phpcomplete#CompletePHP
 au FileType ruby match ErrorMsg '\%>80v.\+'
 au BufNewFile,BufReadPost *.tpl set filetype=html
-au FileType ruby,yaml set tabstop=2 shiftwidth=2 softtabstop=2
+au FileType ruby,yaml,coffee set tabstop=2 shiftwidth=2 softtabstop=2
 
 " ,T = Delete all Trailing space in file
 map <Leader>T :%s/\s\+$//<CR>
@@ -43,6 +44,9 @@ map <Leader>P :! php -q %<CR>
 map <Leader>L :set invnumber<CR>
 
 map <Leader>n :CommandT<CR>
+
+nnoremap Q <nop>
+set nostartofline
 
 nmap ; :
 
@@ -63,7 +67,7 @@ noremap <silent> <C-h> :bprev<CR>
 noremap <silent> <C-right> :bnext<CR>
 noremap <silent> <C-l> :bnext<CR>
 " Closes the current buffer
-nmap <Leader>q :bw<CR>
+nmap <Leader>q :Bclose<CR>
 
 " Airline
 let g:airline_theme="powerlineish"
@@ -86,6 +90,10 @@ nnoremap <Leader>gg :Git
 nnoremap <Leader>gd :Gdiff<CR>
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
+" NERD Tree
+map <Leader>l :NERDTreeTabsToggle<CR>
+map <Leader>f :NERDTreeTabsFind<CR>
+
 " PDV
 let g:pdv_template_dir = $HOME ."/.vim/UltiSnips"
 map <Leader>a :call pdv#DocumentWithSnip()<CR>
@@ -100,6 +108,13 @@ map <Leader>t :TlistToggle<CR>
 let g:vdebug_options={}
 let g:vdebug_options['port']=9001
 let g:vdebug_options['break_on_open']=0
+
+" Getter/setter
+map <Leader>s <Plug>PhpgetsetInsertGetterSetter
+let g:nerdtree_tabs_autoclose=0
+
+" YCM
+let g:ycm_collect_identifiers_from_tags_files = 1
 
 " Colors
 set t_Co=256
