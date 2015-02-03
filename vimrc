@@ -120,7 +120,7 @@ let g:vdebug_options['break_on_open']=0
 " Getter/setter
 map <Leader>s <Plug>PhpgetsetInsertGetterSetter
 
-let b:phpgetset_getterTemplate =
+let g:phpgetset_getterTemplate =
     \ "\n" .
     \ "    /**\n" .
     \ "     * Get %varname%.\n" .
@@ -131,7 +131,7 @@ let b:phpgetset_getterTemplate =
     \ "    {\n" .
     \ "        return $this->%varname%;\n" .
     \ "    }"
-let b:phpgetset_setterTemplate =
+let g:phpgetset_setterTemplate =
     \ "\n" .
     \ "    /**\n" .
     \ "     * Set %varname%.\n" .
