@@ -94,6 +94,9 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 map <Leader>l :NERDTreeTabsToggle<CR>
 map <Leader>f :NERDTreeTabsFind<CR>
 
+" JSHint
+let JSHintUpdateWriteOnly=1
+
 " PDV
 let g:pdv_template_dir = $HOME ."/.vim/UltiSnips"
 map <Leader>a :call pdv#DocumentWithSnip()<CR>
@@ -132,4 +135,8 @@ if &term == "screen"
 endif
 if &term == "screen" || &term == "xterm"
     set title
+endif
+
+if filereadable(expand('~/.vim/.vim_module'))
+    source ~/.vim/.vim_module
 endif
