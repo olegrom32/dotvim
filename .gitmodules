@@ -76,3 +76,6 @@
 [submodule "bundle/jshint.vim"]
 	path = bundle/jshint.vim
 	url = https://github.com/wookiehangover/jshint.vim
+[submodule "bundle/php-getter-setter.vim"]
+	path = bundle/php-getter-setter.vim
+	url = https://github.com/docteurklein/php-getter-setter.vim
