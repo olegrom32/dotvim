@@ -43,8 +43,6 @@ map <Leader>P :! php -q %<CR>
 " ,L = Toggle line numbers
 map <Leader>L :set invnumber<CR>
 
-map <Leader>n :CommandT<CR>
-
 nnoremap Q <nop>
 set nostartofline
 
@@ -78,6 +76,10 @@ set laststatus=2
 let g:bufferline_echo=0
 let g:bufferline_show_bufnr=1
 
+" Command-T
+map <Leader>n :CommandT<CR>
+map <Leader>z :CommandTFlush<CR>
+
 "------  Fugitive  ------
 nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gr :Gremove<CR>
@@ -102,7 +104,8 @@ let g:pdv_template_dir = $HOME ."/.vim/UltiSnips"
 map <Leader>a :call pdv#DocumentWithSnip()<CR>
 
 " Syntastic
-let g:syntastic_php_phpcs_args="--standard=PSR2"
+let g:syntastic_php_phpcs_args = "--standard=PSR2"
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 
 " Taglist
 map <Leader>t :TlistToggle<CR>
@@ -125,7 +128,7 @@ let g:phpgetset_getterTemplate =
     \ "    /**\n" .
     \ "     * Get %varname%.\n" .
     \ "     *\n" .
-    \ "     * @return mixed $%varname%\n" .
+    \ "     * @return mixed\n" .
     \ "     */\n" .
     \ "    public function %funcname%()\n" .
     \ "    {\n" .
